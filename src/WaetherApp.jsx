@@ -9,11 +9,14 @@ export default function WeatherApp() {
         // DUMMY DATA !!
         city: "Japan",
         feelsLike: 18.11,
-        humadity: undefined,
+        humadity: 75,
         temp: 19.05,
         tempMax: 19.05,
         tempMin: 19.05,
-        weather: "haze"
+        weather: "haze",
+        // MINOR ADDITION 
+        wind: 3.2,
+        windDeg: 250,
     })
 
     let updateInfo = (result) => {
@@ -22,7 +25,7 @@ export default function WeatherApp() {
 
     return (
         <div>
-            <h2>Weather App</h2>
+            <h2>Weather App 🌦️</h2>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info = {weatherInfo}/>
         </div>

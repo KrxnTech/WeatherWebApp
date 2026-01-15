@@ -24,10 +24,12 @@ export default function SearchBox({ updateInfo }) {
                 humadity: JsonResponse.main.humadity,
                 feelsLike: JsonResponse.main.feels_like,
                 weather: JsonResponse.weather[0].description,
+                wind: JsonResponse.wind.speed,
+                windDeg: JsonResponse.wind.deg,
 
             }
 
-            // console.log(result) 
+            console.log(JsonResponse) 
             return result
         } catch (err) {
             // setErr(err) 

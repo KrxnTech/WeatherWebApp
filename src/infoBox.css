@@ -1,0 +1,78 @@
+/* #TWO_MORE_DATA {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+#TWO_MORE_DATA #WIND_SPEED {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+#TWO_MORE_DATA #WIND_DEGREE {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+} */
+
+#TWO_MORE_DATA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 16px;
+    margin: 12px 0;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    font-weight: 600;
+    color: #222;
+}
+
+
+#TWO_MORE_DATA #WIND_SPEED,
+#TWO_MORE_DATA #WIND_DEGREE {
+    flex: 1;
+    text-align: center;
+
+    padding: 8px 10px;
+    border-radius: 8px;
+
+    background-color: #f4f4f4;
+    color: #333;
+
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    #TWO_MORE_DATA {
+        flex-direction: column;
+        gap: 8px;
+
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+
+    #TWO_MORE_DATA #WIND_SPEED,
+    #TWO_MORE_DATA #WIND_DEGREE {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #TWO_MORE_DATA {
+        font-size: 0.8rem;
+    }
+}

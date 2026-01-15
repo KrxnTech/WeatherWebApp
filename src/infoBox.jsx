@@ -2,6 +2,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import SunnyIcon from '@mui/icons-material/Sunny';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import './infoBox.css';
+
 
 export default function InfoBox({ info }) {
 
@@ -13,12 +18,25 @@ export default function InfoBox({ info }) {
     const RAIN_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq58x5FWbmFkIBsjsfeT8YxPOS5rmeefO8TQ&s"
 
 
+    // EXTRA ICONS FEATURE 
+    const HOT_ICON = <SunnyIcon style={{ color: "orange", fontSize: "2rem" }} />
+    const COLD_ICON = <AcUnitIcon style={{ color: "blue", fontSize: "2rem" }} />
+    const RAIN_ICON = <WaterDropIcon style={{ color: "white", fontSize: "2rem" }} />
+
+
+    const style_1 = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    }
+
+    
     return (
         <div>
             <br />
 
-            <p>Weather Brodcasting Example 💓</p>
-            <div className='MAIN_DIV_INFO_BOX' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <p>Weather Broadcasting Example 💓</p>
+            <div style={style_1}>
                 <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
                         sx={{ height: 140 }}
@@ -32,15 +50,19 @@ export default function InfoBox({ info }) {
                         }
 
                     />
-                    <CardContent>
+                    <CardContent style={ info.humidity > 80 ? {backgroundColor: "#1e3a5f"} : info.temp > 15 ? {backgroundColor: "#fde68a"} : {backgroundColor: "#e0f2fe"} }>
                         <Typography style={{ fontFamily: "Sour Gummy" }} gutterBottom variant="h5" component="div">
-                            {info.city}
+                            {info.city} <p>{info.humidity > 80 ? RAIN_ICON : info.temp > 15 ? HOT_ICON : COLD_ICON}</p>
                         </Typography>
                         <Typography component={"span"} variant="body2" sx={{ color: 'text.secondary' }}>
                             <div>Temperature : <b>{info.temp}</b>&deg;</div>
                             <div>Max_Temperature : <b>{info.tempMax}</b>&deg;</div>
                             <div>Min_Temperature : <b>{info.tempMin}</b>&deg;</div>
                             <div>The Weather can be described as <b style={{ color: "blue" }}>{info.weather}</b> and feels like <b>{info.feelsLike}</b>&deg;</div>
+                            <div id="TWO_MORE_DATA">
+                                <div id="WIND_SPEED">Wind Speed 🍃 : {info.wind} m/s</div>
+                                <div id="WIND_DEGREE">Wind Degree : {info.windDeg}°</div>
+                            </div>
                         </Typography>
                     </CardContent>
                 </Card>

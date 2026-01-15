@@ -1,13 +1,13 @@
 import './App.css'
-// import WeatherApp from './WaetherApp';
-import SearchBox2 from './component/SearchBox2';
+// import WeatherApp2 from './component/WeatherApp2';
+import WeatherApp from './WaetherApp';
 
 function App() {
 
   return (
     <>
-      <SearchBox2 />
-      {/* <WeatherApp/> */}
+      <WeatherApp/>
+      {/* <WeatherApp2/> */}
     </>
   )
 }

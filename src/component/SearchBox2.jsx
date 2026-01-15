@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
-export default function SearchBox2() {
+export default function SearchBox2({updateInfo}) {
 
     const [city, setCity] = useState("")
     let API_URL = "https://api.openweathermap.org/data/2.5/weather" // API URL 
@@ -27,7 +27,8 @@ export default function SearchBox2() {
                 feelslike : JsonResponce.main.feels_like ,
                 weather : JsonResponce.weather[0].description
             }
-            console.log(FILTER_RESULT)
+            // console.log(FILTER_RESULT) 
+            return FILTER_RESULT
 
         } catch (err) {
             console.log(err)
@@ -36,10 +37,11 @@ export default function SearchBox2() {
 
 
 
-    let handleSubmit = (e) => {
+    let handleSubmit = async (e) => {
         try {
             e.preventDefault()
-            getWeatherInfo()
+            let newInfo = await getWeatherInfo()
+            updateInfo(newInfo)
             setCity("") // INPUT RESET 
         } catch (err) {
             console.log(err)
@@ -56,7 +58,7 @@ export default function SearchBox2() {
                 <TextField value={city} onChange={handleChange} label="City Name 🏙️" variant="outlined" />
                 <br />
                 <br />
-                <Button type="submit" variant="contained">Search ⛅</Button>
+                <Button  type="submit" variant="contained">Search ⛅</Button>
             </form>
         </div>
     )
