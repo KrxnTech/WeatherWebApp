@@ -1,0 +1,28 @@
+body {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 15px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+}
+

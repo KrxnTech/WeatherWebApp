@@ -1,4 +1,6 @@
 import { useState } from "react";
+import DarkLight from "./DarkLight";
+import "./WeatherApp.css"
 
 // IMPORTED 2 FILES 
 import SearchBox from "./SearchBox";
@@ -25,7 +27,11 @@ export default function WeatherApp() {
 
     return (
         <div>
-            <h2>Weather App 🌦️</h2>
+            <div className="TOP_NAV">
+                <div>change Mode : </div>
+                <div><DarkLight/></div>
+            </div>
+            <h2>Weather App 🌦️ <p style={{fontSize : "15px"}}>See Real Time Weather and more information about Weather 😉</p></h2>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info = {weatherInfo}/>
         </div>

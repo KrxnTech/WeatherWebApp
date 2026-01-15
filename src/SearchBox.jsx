@@ -59,9 +59,7 @@ export default function SearchBox({ updateInfo }) {
         <div>
             <form onSubmit={handleSubmit}>
                 <TextField onChange={handleChange} value={city} id="city" label="City Name" variant="outlined" required />
-                <br />
-                <br />
-                <Button variant="contained" type="submit">Search</Button>
+                <Button style={{margin:"8.5px 10px 10px 10px"}} variant="contained" type="submit">Search</Button>
                 {err && <p style={{ color: "red" }}>No such place in our API !!</p>}
             </form>
         </div>
