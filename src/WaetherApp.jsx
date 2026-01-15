@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+// IMPORTED 2 FILES 
 import SearchBox from "./SearchBox";
 import InfoBox from "./infoBox";
 

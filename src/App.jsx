@@ -1,19 +1,13 @@
 import './App.css'
-import WeatherApp from './WaetherApp';
+// import WeatherApp from './WaetherApp';
+import SearchBox2 from './component/SearchBox2';
 
 function App() {
 
   return (
     <>
-
-      {/* <Button 
-      startIcon={<DeleteIcon />} 
-      size="large" 
-      color='error' 
-      onClick={HandleClick} 
-      variant="contained"> DELETE </Button> */}
-
-      <WeatherApp/>
+      <SearchBox2 />
+      {/* <WeatherApp/> */}
     </>
   )
 }
