@@ -5,8 +5,8 @@ import { useState } from 'react';
 export default function SearchBox2({updateInfo}) {
 
     const [city, setCity] = useState("")
-    let API_URL = "https://api.openweathermap.org/data/2.5/weather" // API URL 
-    let API_KEY = "e62957270b6c1cf93370b7660e8b0601" // API KEY 
+    let API_URL = "replace_with_your_api_url" // API URL 
+    let API_KEY = "replace_with_your_api_key" // API KEY 
 
     // NOW WE ARE GOING TO CREATE A FUNCTION WHICH WILL SELECT THE 
     // FILTERD INFO FROM API DATA TO SHOW ONLY THE MAIN INFO ⛅
